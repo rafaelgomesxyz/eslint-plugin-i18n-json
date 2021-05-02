@@ -25,23 +25,23 @@ module.exports = {
   },
   configs: {
     recommended: {
-      plugins: ['i18n-json'],
+      plugins: ['@rafaelgomesxyz/i18n-json'],
       rules: {
-        'i18n-json/valid-message-syntax': [
+        '@rafaelgomesxyz/i18n-json/valid-message-syntax': [
           2,
           {
             syntax: 'icu' // default syntax
           }
         ],
-        'i18n-json/valid-json': 2,
-        'i18n-json/sorted-keys': [
+        '@rafaelgomesxyz/i18n-json/valid-json': 2,
+        '@rafaelgomesxyz/i18n-json/sorted-keys': [
           2,
           {
             order: 'asc',
             indentSpaces: 2
           }
         ],
-        'i18n-json/identical-keys': 0
+        '@rafaelgomesxyz/i18n-json/identical-keys': 0
       }
     }
   }
