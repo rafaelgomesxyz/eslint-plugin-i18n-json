@@ -23,7 +23,7 @@ const compareTranslationsStructure = (
   const augmentedTranslationsA = {};
   const augmentedTranslationsB = {};
 
-  const ignorePaths = settings['i18n-json/ignore-keys'] || [];
+  const ignorePaths = settings['@rafaelgomesxyz/i18n-json/ignore-keys'] || [];
 
   const opts = {
     ignorePaths

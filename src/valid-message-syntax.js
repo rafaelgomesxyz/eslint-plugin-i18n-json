@@ -125,7 +125,7 @@ const validMessageSyntax = (context, source) => {
     ];
   }
 
-  const ignorePaths = settings['i18n-json/ignore-keys'] || [];
+  const ignorePaths = settings['@rafaelgomesxyz/i18n-json/ignore-keys'] || [];
 
   deepForOwn(
     translations,
