@@ -11,11 +11,9 @@ const DIFF_OPTIONS = {
 // lodash.set will automatically convert a previous string value
 // into an object, if the current path states that a key is nested inside.
 // reminder, deepForOwn goes from the root level to the deepest level (preorder)
-const compareTranslationsStructure = (settings, translationsA, translationsB) => {
+const compareTranslationsStructure = (settings, translationsA, translationsB, ignorePaths) => {
   const augmentedTranslationsA = {};
   const augmentedTranslationsB = {};
-
-  const ignorePaths = settings['i18n-json/ignore-keys'] || [];
 
   const opts = {
     ignorePaths

@@ -1,3 +1,4 @@
+const micromatch = require('micromatch');
 const set = require('lodash.set');
 const diff = require('jest-diff');
 const isPlainObject = require('lodash.isplainobject');
@@ -77,7 +78,7 @@ const createValidator = (syntax) => {
   };
 };
 
-const validMessageSyntax = (context, source) => {
+const validMessageSyntax = (context, source, sourceFilePath) => {
   const { options, settings = {} } = context;
 
   let { syntax } = options[0] || {};
@@ -125,7 +126,17 @@ const validMessageSyntax = (context, source) => {
     ];
   }
 
-  const ignorePaths = settings['i18n-json/ignore-keys'] || [];
+  const ignorePaths = [];
+  const ignorePathsSetting = settings['i18n-json/ignore-keys'] || [];
+  if (Array.isArray(ignorePathsSetting)) {
+    ignorePaths.push(...ignorePathsSetting);
+  } else {
+    Object.keys(ignorePathsSetting).forEach((filePath) => {
+      if (micromatch.isMatch(sourceFilePath, filePath)) {
+        ignorePaths.push(...ignorePathsSetting[filePath]);
+      }
+    });
+  }
 
   deepForOwn(
     translations,
@@ -212,14 +223,14 @@ module.exports = {
   create(context) {
     return {
       Program(node) {
-        const { valid, source } = getTranslationFileSource({
+        const { valid, source, sourceFilePath } = getTranslationFileSource({
           context,
           node
         });
         if (!valid) {
           return;
         }
-        const errors = validMessageSyntax(context, source);
+        const errors = validMessageSyntax(context, source, sourceFilePath);
         errors.forEach((error) => {
           context.report(error);
         });
