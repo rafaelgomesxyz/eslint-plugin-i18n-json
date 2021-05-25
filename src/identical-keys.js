@@ -1,3 +1,4 @@
+const micromatch = require('micromatch');
 const requireNoCache = require('./util/require-no-cache');
 const compareTranslationsStructure = require('./util/compare-translations-structure');
 const getTranslationFileSource = require('./util/get-translation-file-source');
@@ -164,12 +165,26 @@ const identicalKeys = (context, source, sourceFilePath) => {
     return errors;
   }
 
+  const ignorePaths = [];
+  const ignorePathsSetting = settings['i18n-json/ignore-keys'] || [];
+  if (Array.isArray(ignorePathsSetting)) {
+    ignorePaths.push(...ignorePathsSetting);
+  } else {
+    Object.keys(ignorePathsSetting).forEach((filePath) => {
+      if (micromatch.isMatch(sourceFilePath, filePath)) {
+        ignorePaths.push(...ignorePathsSetting[filePath]);
+      }
+    });
+  }
+
   const { checkDuplicateValues = false } = comparisonOptions;
   const isSourceFile = sourceFilePath === comparisonOptions.filePath;
+
   const diffString = compareTranslationsStructure(
     settings,
     keyStructure,
     currentTranslations,
+    ignorePaths,    
     checkDuplicateValues && !isSourceFile
   );
 

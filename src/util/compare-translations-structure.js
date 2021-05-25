@@ -18,6 +18,7 @@ const compareTranslationsStructure = (
   settings,
   translationsA,
   translationsB,
+  ignorePaths,
   checkDuplicateValues
 ) => {
   const augmentedTranslationsA = {};
