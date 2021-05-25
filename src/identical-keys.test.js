@@ -192,7 +192,7 @@ ruleTester.run('identical-keys', rule, {
       ],
       filename: 'file.json',
       settings: {
-        'i18n-json/ignore-keys': ['translationLevelOne.translationLevelTwo']
+        '@rafaelgomesxyz/i18n-json/ignore-keys': ['translationLevelOne.translationLevelTwo']
       }
     }
   ],

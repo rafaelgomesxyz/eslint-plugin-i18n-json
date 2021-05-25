@@ -127,7 +127,7 @@ const validMessageSyntax = (context, source, sourceFilePath) => {
   }
 
   const ignorePaths = [];
-  const ignorePathsSetting = settings['i18n-json/ignore-keys'] || [];
+  const ignorePathsSetting = settings['@rafaelgomesxyz/i18n-json/ignore-keys'] || [];
   if (Array.isArray(ignorePathsSetting)) {
     ignorePaths.push(...ignorePathsSetting);
   } else {

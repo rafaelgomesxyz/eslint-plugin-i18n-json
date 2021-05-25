@@ -166,7 +166,7 @@ const identicalKeys = (context, source, sourceFilePath) => {
   }
 
   const ignorePaths = [];
-  const ignorePathsSetting = settings['i18n-json/ignore-keys'] || [];
+  const ignorePathsSetting = settings['@rafaelgomesxyz/i18n-json/ignore-keys'] || [];
   if (Array.isArray(ignorePathsSetting)) {
     ignorePaths.push(...ignorePathsSetting);
   } else {
@@ -184,7 +184,7 @@ const identicalKeys = (context, source, sourceFilePath) => {
     settings,
     keyStructure,
     currentTranslations,
-    ignorePaths,    
+    ignorePaths,
     checkDuplicateValues && !isSourceFile
   );
 

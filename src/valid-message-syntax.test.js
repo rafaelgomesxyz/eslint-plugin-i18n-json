@@ -141,7 +141,7 @@ ruleTester.run('valid-message-syntax', rule, {
       ],
       filename: 'file.json',
       settings: {
-        'i18n-json/ignore-keys': ['translationKeyA', 'translationKeyC']
+        '@rafaelgomesxyz/i18n-json/ignore-keys': ['translationKeyA', 'translationKeyC']
       }
     }
   ],

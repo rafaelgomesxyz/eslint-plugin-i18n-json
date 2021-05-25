@@ -18,7 +18,7 @@ module.exports = {
         include: /i18n/,
         loader: 'eslint-loader',
         options: {
-          formatter: require('eslint-plugin-i18n-json/formatter.js'),
+          formatter: require('@rafaelgomesxyz/eslint-plugin-i18n-json/formatter.js'),
         },
       },
     ],
