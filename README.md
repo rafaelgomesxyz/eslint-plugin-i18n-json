@@ -58,7 +58,7 @@
 ### Requires
 
 - eslint >= 4.0.0
-- node >= 6.0.0
+- node >= 8.6.0
 
 ## Examples
 Check out the [Examples](examples/) folder to see different use cases.

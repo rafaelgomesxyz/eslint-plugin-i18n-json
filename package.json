@@ -1,6 +1,6 @@
 {
   "name": "@rafaelgomesxyz/eslint-plugin-i18n-json",
-  "version": "3.3.0",
+  "version": "4.0.0",
   "description": "Fully extendable eslint plugin for JSON i18n translation files.",
   "main": "index.js",
   "scripts": {
@@ -42,7 +42,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.6.0"
   },
   "peerDependencies": {
     "eslint": ">=4.0.0"
@@ -65,7 +65,7 @@
     "lodash.isplainobject": "^4.0.6",
     "lodash.set": "^4.3.2",
     "log-symbols": "^2.2.0",
-    "micromatch": "^3.0.0",
+    "micromatch": "^4.0.4",
     "parse-json": "^5.2.0",
     "plur": "^2.1.2",
     "pretty-format": "^22.0.3"
