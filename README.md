@@ -79,7 +79,7 @@ Right out of the box you get the following through our recommended ruleset `i18n
   - linting of each JSON translation file
   - default severity: error | 2
 - i18n-json/valid-message-syntax
-  - default ICU Message syntax validation (using `intl-messageformat-parser`)
+  - default ICU Message syntax validation (using `@formatjs/icu-messageformat-parser`)
   - default severity: error | 2
 - i18n-json/sorted-keys
   - automatic case-sensitive ascending sort of all keys in the translation file.
@@ -212,7 +212,7 @@ simple
 
 ### i18n-json/valid-message-syntax
 
-- default ICU Message syntax validation (using `intl-messageformat-parser`)
+- default ICU Message syntax validation (using `@formatjs/icu-messageformat-parser`)
 - default severity: error | 2
 - **options**
   - `syntax`: String (Optional). Default value: `icu`.
@@ -423,7 +423,7 @@ simple
 
 - Jest platform packages
 
-- intl-messageformat-parser
+- @formatjs/icu-messageformat-parser
 
 - report formatter ui heavily inspired from: https://github.com/sindresorhus/eslint-formatter-pretty
 
