@@ -1,6 +1,6 @@
 {
   "name": "@rafaelgomesxyz/eslint-plugin-i18n-json",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Fully extendable eslint plugin for JSON i18n translation files.",
   "main": "index.js",
   "scripts": {

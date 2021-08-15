@@ -357,6 +357,8 @@ simple
       ```
   - `order`: String (Optional). Possible values: `asc|desc`. Default value: `asc`. Case-sensitive sort order of translation keys. The rule does a level order traversal of object keys. Supports nested objects. Note: if you supply a custom sort function through `sortFunctionPath`, then this option will be ignored.
   - `indentSpaces` : Number (Optional). Default value: `2`. The number of spaces to indent the emitted sorted translations with. (Will be passed to `JSON.stringify` when generating fixed output).
+  - `useTabs`: Boolean (Optional). Default value: `false`. Use tabs instead of spaces to indent the emitted sorted translations. (Will be passed to `JSON.stringify` when generating fixed output).
+  If `useTabs` and `indentSpaces` are both provided, `indentSpaces` is ignored.
   In the case `--fix` is not supplied to eslint, and the `i18n-json/sorted-keys` rule is not switched off, it will emit an
   `error` (or `warning`) if it detects an invalid sort order for translation keys.
 
